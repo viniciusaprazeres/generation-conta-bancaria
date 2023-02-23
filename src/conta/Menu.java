@@ -14,40 +14,13 @@ public class Menu {
 
         Scanner leia = new Scanner(System.in);
 
-        // Criamos os objetos contas 1 e 2
-        Conta c1 = new Conta(1, 123, 1, "Erica Araújo", 30000.0f);
-        Conta c2 = new Conta(2, 123, 1, "Dener Cardoso", 50000.0f);
-
-        // Conta da Érica
-        c1.visualizar(); // Visualizamos a conta 1
-        c1.setSaldo(35000.0f); // Atualizamos o saldo da conta 1
-        System.out.println("\n\n" + c1.getSaldo()); // Mostramos o saldo da conta 1
-        c1.depositar(10000.0f); // Efetuamos o depósito na conta 1
-        c1.visualizar(); // Visualizamos a conta 1
-
-        // Conta do Dener
-        c2.visualizar(); // Visualizamos a conta 2
-        if (c2.sacar(100000.0f)) // Se verdadeiro então efetuamos o saque na conta 2
-            System.out.println(c2.getSaldo()); // Mostramos o saldo da conta 2
-
-
         // Teste da Classe Conta Corrente
 		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Vinicius", 15000.0f, 1000.0f);
-		cc1.visualizar();
-		cc1.sacar(12000.0f);
-		cc1.visualizar();
-		cc1.depositar(5000.0f);
-		cc1.visualizar();
-        cc1.sacar(8900.0f);
         cc1.visualizar();
 
 
         // Teste da Classe Conta Poupança
 		ContaPoupanca cp1 = new ContaPoupanca(3, 123, 2, "Maria dos Santos", 100000.0f, 15);
-		cp1.visualizar();
-        cp1.sacar(1000.0f);
-		cp1.visualizar();
-		cp1.depositar(5000.0f);
 		cp1.visualizar();
 
         int opcao, numero, numeroDestino, agencia, tipo, aniversario;
