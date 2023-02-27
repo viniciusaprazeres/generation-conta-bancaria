@@ -74,14 +74,14 @@ public class Menu {
             switch (opcao){
                 case 1:
                     System.out.println("Criar conta\n\n");
-                    
+
                     System.out.println("Número da agência: ");
                     agencia = leia.nextInt();
 
                     System.out.println("Nome do titular: ");
                     leia.skip("\\R?");
                     titular = leia.nextLine();
-                    
+
                     do {
                         System.out.println("Tipo da conta (1-CC / 2-CP): ");
                         tipo = leia.nextInt();
@@ -89,7 +89,7 @@ public class Menu {
 
                     System.out.println("Saldo da conta: ");
                     saldo = leia.nextFloat();
-                    
+
 
                     switch(tipo){
                         case 1 -> {
@@ -176,46 +176,51 @@ public class Menu {
                     break;
 
                 case 6:
-                    System.out.println("Saque\n\n");
+                    System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
 
-                    System.out.println("Número da conta: ");
+                    System.out.println("Digite o Numero da conta: ");
                     numero = leia.nextInt();
 
-                    System.out.println("Valor do saque: ");
-                    valor = leia.nextFloat();
+                    do {
+                        System.out.println("Digite o Valor do Saque (R$): ");
+                        valor = leia.nextFloat();
+                    }while(valor <= 0);
 
-                    // Chamada para o método sacar
+                    contas.sacar(numero, valor);
 
                     keyPress();
                     break;
 
                 case 7:
-                    System.out.println("Depósito\n\n");
+                    System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
 
-                    System.out.println("Número da conta: ");
+                    System.out.println("Digite o Numero da conta: ");
                     numero = leia.nextInt();
 
-                    System.out.println("Valor do depósito: ");
-                    valor = leia.nextFloat();
+                    do {
+                        System.out.println("Digite o Valor do Depósito (R$): ");
+                        valor = leia.nextFloat();
+                    }while(valor <= 0);
 
-                    // Chamada para o método depositar
+                    contas.depositar(numero, valor);
 
                     keyPress();
                     break;
 
                 case 8:
-                    System.out.println("Transferência entre contas\n\n");
+                    System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
 
-                    System.out.println("Número da conta - Origem: ");
+                    System.out.println("Digite o Numero da Conta de Origem: ");
                     numero = leia.nextInt();
-
-                    System.out.println("Número da conta - Destino: ");
+                    System.out.println("Digite o Numero da Conta de Destino: ");
                     numeroDestino = leia.nextInt();
 
-                    System.out.println("Valor da transferência: ");
-                    valor = leia.nextFloat();
+                    do {
+                        System.out.println("Digite o Valor da Transferência (R$): ");
+                        valor = leia.nextFloat();
+                    }while(valor <= 0);
 
-                    // Chamada para o método de transferência
+                    contas.transferir(numero, numeroDestino, valor);
 
                     keyPress();
                     break;
